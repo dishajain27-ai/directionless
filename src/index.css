@@ -156,3 +156,50 @@ h1, h2, h3, h4, h5, h6 {
 .float-medium {
   animation: float 4s ease-in-out infinite;
 }
+/* ==========================================
+   MOBILE & TABLET RESPONSIVE FIXES 📱
+   ========================================== */
+
+/* 1. Sabhi Headings ke liye fluid size aur wrapping control */
+h1, h2, h3 {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* 2. Jab screen 768px se choti ho (Mobile Devices) */
+@media (max-width: 768px) {
+  
+  /* Hero section ka main text (DIRECTIONLESS) agar h1 hai */
+  h1 {
+    font-size: clamp(2rem, 8vw, 3.5rem) !important; /* Screen ke hisab se scale hoga */
+    letter-spacing: 0.05em !important;            /* Letter gap ko adjust kiya */
+    line-height: 1.2 !important;
+    text-align: center;
+  }
+
+  /* Agar aapne DIRECTIONLESS text ko alag se class di hui hai, toh usey scaling dein */
+  .hero-title, [class*="title"], [class*="logo"] {
+    font-size: clamp(1.8rem, 7vw, 3rem) !important;
+    word-break: keep-all !important; /* Words ko beech se tootne se rokega */
+    white-space: normal !important;
+  }
+
+  /* Subtitles aur small text responsive adjust */
+  h2 { font-size: 1.8rem !important; }
+  h3 { font-size: 1.5rem !important; }
+
+  /* Buttons ka size mobile ke liye thoda adjust */
+  .btn-gold, .btn-outline {
+    padding: 0.6rem 1.4rem !important;
+    font-size: 0.75rem !important;
+    width: auto;
+    display: inline-block;
+  }
+}
+
+/* 3. Extra small mobiles (jaise purane Android phones) ke liye special tweak */
+@media (max-width: 400px) {
+  h1 {
+    font-size: 1.8rem !important; /* Size aur chota kiya taaki single line mein aaye */
+  }
+}
